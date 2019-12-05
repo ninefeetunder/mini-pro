@@ -1,1 +1,36 @@
 /* pages/goods_detail/goods_detail.wxss */
+
+.detail-swiper swiper {
+  height: 65vw;
+  text-align: center;
+}
+
+.goods-img {
+  width: 65%;
+}
+
+.goods-price {
+  color: var(--themeColor);
+  font-size: 32rpx;
+}
+
+.goods-info {
+  display: flex;
+  padding: 10rpx;
+  font-size: 28rpx;
+}
+
+.goods-name {
+  flex: 5;
+}
+
+.goods-like {
+  flex: 1;
+  padding: 0 20rpx;
+  border-left: 2rpx solid #ccc;
+  text-align: center;
+}
+
+.like {
+  font-size: 32rpx;
+}

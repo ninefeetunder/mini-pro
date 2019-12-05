@@ -1,2 +1,24 @@
-<!--pages/goods_detail/goods_detail.wxml-->
-<text>pages/goods_detail/goods_detail.wxml</text>
+<view class="detail-swiper">
+  <swiper
+  autoplay
+  circular
+  indicator-dots
+  indicator-active-color="#ff5777"
+  >
+    <swiper-item
+      wx:for="{{goodsInfo.pics}}"
+      wx:key="{{item.pics_id}}">
+      <image mode="widthFix" class="goods-img" src="{{item.pics_mid}}" />
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class="goods-price">￥ {{goodsInfo.goods_price}}</view>
+<view class="goods-info">
+  <view class="goods-name">
+    {{goodsInfo.goods_name}}
+  </view>
+  <view class="goods-like">
+    收藏
+  </view>
+</view>
