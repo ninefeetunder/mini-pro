@@ -1,0 +1,16 @@
+.tabs {}
+
+.tabs-title {
+  display: flex;
+}
+.tab-item {
+  flex: 1;
+  padding: 20rpx 0;
+  text-align: center;
+}
+.active {
+  color: var(--themeColor);
+  border-bottom: 5rpx solid currentColor;
+}
+
+.tabs-content {}

@@ -1,0 +1,12 @@
+<swiper
+  class="swiper"
+  indicator-dots
+  autoplay
+  indicator-active-color="#ff5777"
+  circular>
+  <swiper-item wx:for="{{list}}" wx:key="item.goods_id">
+    <navigator>
+      <image src="{{item.image_src}}" mode="widthFix" />
+    </navigator>
+  </swiper-item>
+</swiper>

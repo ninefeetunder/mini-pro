@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "SearchInput": "../../components/SearchInput/SearchInput",
+    "s-swiper": "../../components/s-swiper/s-swiper"
+  },
+  "navigationBarTitleText": "购物街"
+}

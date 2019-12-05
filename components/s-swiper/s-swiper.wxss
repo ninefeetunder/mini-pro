@@ -1,0 +1,9 @@
+/* components/s-swiper/s-swiper.wxss */
+/* 让swiper的宽高比等于图片的宽高比 */
+.swiper {
+  width: 750rpx;
+  height: 340rpx;
+}
+.swiper image {
+  width: 100%;
+}

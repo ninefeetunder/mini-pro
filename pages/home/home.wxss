@@ -1,0 +1,49 @@
+/* pages/home/home.wxss */
+view {
+  /* color: var(--themeColor) */
+}
+
+.cates {
+  display: flex;
+}
+.cate-item {
+  padding: 20rpx;
+  flex: 1;
+}
+
+.cate-item image {
+  width: 100%;
+}
+
+.floor-title {
+  padding: 10rpx 0;
+}
+
+.floor-title image {
+  width: 100%;
+}
+
+.floor-content {
+  overflow: hidden;
+  padding: 0 10rpx;
+}
+
+.fc-nav {
+  float: left;
+  width: 33.33%;
+}
+
+.fc-nav:nth-last-child(-n+4) {
+  height: 27.72711207vw;
+  border-left: 10rpx solid #fff;
+}
+
+.fc-nav:nth-child(2),
+.fc-nav:nth-child(3) {
+  border-bottom: 10rpx solid #fff;
+}
+
+.fc-nav image {
+  width: 100%;
+  height: 100%;
+}

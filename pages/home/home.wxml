@@ -1,0 +1,45 @@
+<!-- 搜索栏组件 开始 -->
+<SearchInput />
+<!-- 搜索框 借结束 -->
+
+<!-- 轮播图  开始-->
+<s-swiper list="{{swiperList}}" />
+<!-- 轮播图 结束 -->
+
+<!-- 推荐导航栏 开始-->
+<view class="cates">
+  <navigator
+    wx:for="{{catesList}}"
+    wx:key="item.name"
+    class="cate-item"
+    >
+    <image src="{{item.image_src}}" mode="widthFix" />
+  </navigator>
+</view>
+<!-- 推荐导航栏  结束 -->
+
+<!-- 楼层 开始 -->
+<view class="floors">
+  <!-- 一层楼 -->
+  <view
+    class="floor-item"
+    wx:for="{{floorList}}"
+    wx:for-item="floor"
+    wx:key="{{floor.floor_title.name}}">
+      <!-- 标题 -->
+      <view class="floor-title">
+        <image src="{{floor.floor_title.image_src}}" mode="widthFix"/>
+      </view>
+      <!-- 内容 -->
+      <view class="floor-content">
+        <navigator
+          class="fc-nav"
+          wx:for="{{floor.product_list}}"
+          wx:key="{{item.name}}"
+          wx:for-index="imgIndex">
+            <image mode="{{imgIndex === 0 ? 'widthFix' : 'scaleToFill'}}" src="{{item.image_src}}" />
+        </navigator>
+      </view>
+  </view>
+</view>
+<!-- 楼层 结束 -->
