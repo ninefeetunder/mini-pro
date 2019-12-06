@@ -22,15 +22,75 @@
 
 .goods-name {
   flex: 5;
+  /* 第二行出现省略号 */
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
-.goods-like {
+.goods-collect {
   flex: 1;
   padding: 0 20rpx;
   border-left: 2rpx solid #ccc;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.like {
+.goods-desc {
+  margin-bottom: 90rpx;
+}
+
+.desc-title {
+  color: var(--themeColor);
   font-size: 32rpx;
+  padding: 20rpx;
+}
+
+.btm-tool {
+  display:  flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90rpx;
+  width: 100%;
+  background-color: #fff;
+  border-top: 2rpx solid #eee;
+}
+.tool-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.tool-item > button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.tool-cart,
+.tool-buy {
+  flex: 2;
+  color:#fff;
+  font-weight: 600;
+  font-size: 30rpx;
+}
+
+.tool-cart {
+  background: #ffa330;
+}
+
+.tool-buy {
+  background-color: var(--themeColor);
 }

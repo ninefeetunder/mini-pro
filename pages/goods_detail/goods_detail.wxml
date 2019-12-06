@@ -7,7 +7,9 @@
   >
     <swiper-item
       wx:for="{{goodsInfo.pics}}"
-      wx:key="{{item.pics_id}}">
+      wx:key="{{item.pics_id}}"
+      bind:tap="handleImgPreview"
+      data-url="{{item.pics_mid}}">
       <image mode="widthFix" class="goods-img" src="{{item.pics_mid}}" />
     </swiper-item>
   </swiper>
@@ -18,7 +20,42 @@
   <view class="goods-name">
     {{goodsInfo.goods_name}}
   </view>
-  <view class="goods-like">
-    收藏
+  <view class="goods-collect">
+    <text class="iconfont icon-collection"></text>
+    <text class="goods-text">收藏</text>
+  </view>
+</view>
+
+<!-- 图文描述 -->
+<view class="goods-desc">
+  <view class="desc-title">
+    商品参数
+  </view>
+  <view class="desc-content">
+    <!-- 使用富文本直接渲染html字符串 -->
+    <rich-text nodes="{{goodsInfo.goods_introduce}}"></rich-text>
+  </view>
+</view>
+
+<view class="btm-tool">
+  <view class="tool-item">
+    <text class="iconfont icon-kefu"></text>
+    <view class="tool-info">客服</view>
+    <button open-type="contact"></button>
+  </view>
+  <view class="tool-item">
+    <text class="iconfont icon-share_icon"></text>
+    <view class="tool-info">分享</view>
+    <button open-type="share"></button>
+  </view>
+  <navigator class="tool-item" open-type="switchTab" url="/pages/cart/cart">
+    <text class="iconfont icon-icon22fuzhi"></text>
+    <view class="tool-info">购物车</view>
+  </navigator>
+  <view class="tool-item tool-cart" bind:tap="handleAddCart">
+    <view class="tool-info">加入购物车</view>
+  </view>
+  <view class="tool-item tool-buy">
+    <view class="tool-info">立即购买</view>
   </view>
 </view>

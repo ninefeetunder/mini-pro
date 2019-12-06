@@ -1,1 +1,19 @@
-/* pages/cart/cart.wxss */
+.receive-address {
+  padding: 20rpx;
+}
+
+.receive-address > button {
+  width: 60%;
+}
+
+.show-address {
+  padding: 10rpx;
+}
+
+.show-address {
+  border-bottom: 2rpx solid var(--themeColor)
+}
+
+.user-phone {
+  float: right;
+}
