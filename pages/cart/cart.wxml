@@ -18,3 +18,52 @@
       </view>
     </view>
 </view>
+
+<!-- 购物车内容 -->
+<view class="cart-content">
+  <view class="cart-title">购物车</view>
+  <view class="cart-main">
+    <view
+    class="cart-item"
+    wx:for="{{cart}}"
+    wx:key="{{item.goods_id}}">
+      <view class="cart-cbx-wrap flex">
+        <checkbox-group bind:change="handleCheckedChange" data-goodsId="{{item.goods_id}}">
+          <checkbox checked="{{item.checked}}" />
+        </checkbox-group>
+      </view>
+      <navigator class="goods-img-wrap flex">
+        <image mode="widthFix" src="{{item.goods_big_logo}}" />        
+      </navigator>
+      <view class="goods-info-wrap">
+        <view class="goods-name">
+          {{item.goods_name}}
+        </view>
+        <view class="goods-desc">
+          <view class="goods-price">￥ {{item.goods_price}}</view>
+          <view class="cart-num-tool">
+            <view class="num-edit">-</view>
+            <view class="goods-num">{{item.num}}</view>
+            <view class="num-edit">+</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 底部工具栏 -->
+<view class="footer-tool">
+  <view class="all-choose flex">
+    <checkbox-group bind:change="handleAllChoose">
+        <checkbox checked="{{allChecked}}">全选</checkbox>
+    </checkbox-group>
+  </view>
+
+  <view class="total-price-wrap">
+    <view>总计: <text class="price-text">￥ {{totalPrice}}</text></view>
+    <view class="transport">包含运费</view>
+  </view>
+
+  <view class="all-counter flex">结算({{totalNum}})</view>
+</view>
