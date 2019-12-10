@@ -23,32 +23,37 @@
 <view class="cart-content">
   <view class="cart-title">购物车</view>
   <view class="cart-main">
-    <view
-    class="cart-item"
-    wx:for="{{cart}}"
-    wx:key="{{item.goods_id}}">
-      <view class="cart-cbx-wrap flex">
-        <checkbox-group bind:change="handleCheckedChange" data-goodsId="{{item.goods_id}}">
-          <checkbox checked="{{item.checked}}" />
-        </checkbox-group>
-      </view>
-      <navigator class="goods-img-wrap flex">
-        <image mode="widthFix" src="{{item.goods_big_logo}}" />        
-      </navigator>
-      <view class="goods-info-wrap">
-        <view class="goods-name">
-          {{item.goods_name}}
+    <block wx:if="{{cart.length}}">
+      <view
+      class="cart-item"
+      wx:for="{{cart}}"
+      wx:key="{{item.goods_id}}">
+        <view class="cart-cbx-wrap flex">
+          <checkbox-group bind:change="handleCheckedChange" data-goodsId="{{item.goods_id}}">
+            <checkbox checked="{{item.checked}}" />
+          </checkbox-group>
         </view>
-        <view class="goods-desc">
-          <view class="goods-price">￥ {{item.goods_price}}</view>
-          <view class="cart-num-tool">
-            <view class="num-edit">-</view>
-            <view class="goods-num">{{item.num}}</view>
-            <view class="num-edit">+</view>
+        <navigator class="goods-img-wrap flex">
+          <image mode="widthFix" src="{{item.goods_big_logo}}" />        
+        </navigator>
+        <view class="goods-info-wrap">
+          <view class="goods-name">
+            {{item.goods_name}}
+          </view>
+          <view class="goods-desc">
+            <view class="goods-price">￥ {{item.goods_price}}</view>
+            <view class="cart-num-tool">
+              <view class="num-edit" bind:tap="handleDelGoods" data-goodsId="{{item.goods_id}}">-</view>
+              <view class="goods-num">{{item.num}}</view>
+              <view class="num-edit" bind:tap="handleAddGoods" data-goodsId="{{item.goods_id}}">+</view>
+            </view>
           </view>
         </view>
       </view>
-    </view>
+    </block>
+    <block wx:else>
+      <image mode="widthFix" src="../../assets/images/kcart/null.jpg" />
+    </block>
   </view>
 </view>
 
@@ -56,7 +61,10 @@
 <view class="footer-tool">
   <view class="all-choose flex">
     <checkbox-group bind:change="handleAllChoose">
-        <checkbox checked="{{allChecked}}">全选</checkbox>
+        <checkbox checked="{{allChecked}}">
+          <text wx:if="{{!allChecked}}">全选</text>
+          <text wx:else>全不选</text>
+        </checkbox>
     </checkbox-group>
   </view>
 
@@ -65,5 +73,7 @@
     <view class="transport">包含运费</view>
   </view>
 
-  <view class="all-counter flex">结算({{totalNum}})</view>
+  <view class="all-counter flex" bind:tap="handlePay">
+    结算({{totalNum}})
+  </view>
 </view>

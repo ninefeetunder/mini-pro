@@ -6,7 +6,8 @@
     "pages/profile/profile",
     "pages/search/search",
     "pages/goods_list/goods_list",
-    "pages/goods_detail/goods_detail"
+    "pages/goods_detail/goods_detail",
+    "pages/pay/pay"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ff5777",
