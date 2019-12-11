@@ -1,2 +1,59 @@
-<!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<view class="user-info-wrap">
+    <view class="user-img-wrap" wx:if="{{userInfo.nickName}}">
+      <image class="user-img-bg" src="{{userInfo.avatarUrl}}"/>
+      <view class="user-info">
+        <image class="user-icon" src="{{userInfo.avatarUrl}}" />
+        <view class="user-name">{{ userInfo.nickName }}</view>
+      </view>
+    </view>
+    <button wx:else type="primary" size="mini" plain class="login"
+    bind:tap="handleUserLogin"
+    >
+      登录
+    </button>
+</view>
+
+<view class="user-content">
+  <view class="user-main">
+    <view class="history-wrap">
+      <navigator>
+        <view class="his-num">0</view>
+        <view class="his-text">收藏店铺</view>
+      </navigator>
+      <navigator>
+        <view class="his-num">0</view>
+        <view class="his-text">收藏商品</view>
+      </navigator>
+      <navigator>
+        <view class="his-num">0</view>
+        <view class="his-text">关注商品</view>
+      </navigator>
+      <navigator>
+        <view class="his-num">0</view>
+        <view class="his-text">我的足迹</view>
+      </navigator>
+    </view>
+    <!-- 我的订单 -->
+    <view class="user-order">
+      <view class="order-title">我的订单</view>
+      <view class="order-wrap">
+        <navigator>
+          <!-- <image  /> -->
+          <view class="order-text">全部订单</view>
+        </navigator>
+        <navigator>
+          <!-- <image  /> -->
+          <view class="order-text">待付款</view>
+        </navigator>
+        <navigator>
+          <!-- <image  /> -->
+          <view class="order-text">待收获</view>
+        </navigator>
+        <navigator>
+          <!-- <image  /> -->
+          <view class="order-text">退货/退款</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,1 +1,90 @@
-/* pages/profile/profile.wxss */
+page {
+  background-color: #edece8;
+}
+
+.user-info-wrap {
+  height: 45vh;
+  background: var(--themeColor);
+  position: relative;
+}
+
+.user-img-wrap {
+  height: 45vh;
+}
+
+.user-img-bg {
+  height: 100%;
+  filter: blur(6rpx);
+}
+
+.user-info {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%);
+}
+
+.user-icon {
+  height: 180rpx;
+  width: 180rpx;
+  border-radius: 50%;
+}
+
+.user-name {
+  font-size: 32rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.login {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%);
+}
+
+.user-content {
+  position: relative;
+}
+
+.user-main {
+  width: 90%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: -40rpx;
+}
+
+.history-wrap {
+  display: flex;
+  background-color: #fff;
+}
+
+.history-wrap > navigator {
+  text-align: center;
+  flex: 1;
+  padding: 10rpx 0;
+}
+
+.his-num {
+  color: var(--themeColor);
+}
+
+.user-order {
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+.order-title {
+  padding: 20rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.order-wrap {
+  display: flex;
+  padding: 20rpx 0;
+}
+
+.order-wrap > navigator {
+  flex: 1;
+  text-align: center;
+}
