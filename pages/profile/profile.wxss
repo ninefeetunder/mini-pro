@@ -88,3 +88,32 @@ page {
   flex: 1;
   text-align: center;
 }
+
+navigator > .iconfont {
+  color: var(--themeColor);
+  font-size: 32rpx;
+}
+
+.address {
+  margin-top: 20rpx;
+  padding: 20rpx;
+  background-color: #fff;
+}
+
+.system-option {
+  margin-top: 20rpx;
+}
+.s-item {
+  padding: 20rpx;
+  margin-bottom: 2rpx;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.recommend {
+  margin-top: 20rpx;
+  padding: 20rpx;
+  background-color: #fff;
+  margin-bottom: 40rpx;
+}

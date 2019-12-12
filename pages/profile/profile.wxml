@@ -15,6 +15,7 @@
 
 <view class="user-content">
   <view class="user-main">
+    <!-- 用户历史列表 -->
     <view class="history-wrap">
       <navigator>
         <view class="his-num">0</view>
@@ -38,22 +39,35 @@
       <view class="order-title">我的订单</view>
       <view class="order-wrap">
         <navigator>
-          <!-- <image  /> -->
+          <view class="iconfont icon-weibiaoti-"></view>
           <view class="order-text">全部订单</view>
         </navigator>
         <navigator>
-          <!-- <image  /> -->
+          <view class="iconfont icon-shouhuo"></view>
           <view class="order-text">待付款</view>
         </navigator>
         <navigator>
-          <!-- <image  /> -->
-          <view class="order-text">待收获</view>
+          <view class="iconfont icon-fukuan"></view>
+          <view class="order-text">待收货</view>
         </navigator>
         <navigator>
-          <!-- <image  /> -->
+          <view class="iconfont icon-tuikuan"></view>
           <view class="order-text">退货/退款</view>
         </navigator>
       </view>
     </view>
+    <!-- 收获地址管理 -->
+    <view class="address">
+      收货地址管理
+    </view>
+    <view class="system-option">
+      <view class="s-item concat">
+        <view>联系客服</view>
+        <view>400-618-4000</view>
+      </view>
+      <view class="s-item">意见反馈</view>
+      <view class="s-item">关于我们</view>
+    </view>
+    <view class="recommend">把应用推荐给其他人</view>
   </view>
 </view>
