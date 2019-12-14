@@ -9,7 +9,8 @@
     "pages/goods_detail/goods_detail",
     "pages/pay/pay",
     "pages/auth/auth",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/order/order"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ff5777",

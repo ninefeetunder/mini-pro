@@ -22,7 +22,7 @@
         <view class="his-text">收藏店铺</view>
       </navigator>
       <navigator>
-        <view class="his-num">0</view>
+        <view class="his-num">{{collectList.length}}</view>
         <view class="his-text">收藏商品</view>
       </navigator>
       <navigator>
@@ -38,15 +38,15 @@
     <view class="user-order">
       <view class="order-title">我的订单</view>
       <view class="order-wrap">
-        <navigator>
+        <navigator url="/pages/order/order?type=1">
           <view class="iconfont icon-weibiaoti-"></view>
           <view class="order-text">全部订单</view>
         </navigator>
-        <navigator>
+        <navigator url="/pages/order/order?type=2">
           <view class="iconfont icon-shouhuo"></view>
           <view class="order-text">待付款</view>
         </navigator>
-        <navigator>
+        <navigator url="/pages/order/order?type=3">
           <view class="iconfont icon-fukuan"></view>
           <view class="order-text">待收货</view>
         </navigator>

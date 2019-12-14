@@ -3,7 +3,8 @@ import {getGoodsDetailData} from '../../request/goods_detail.js'
 Page({
   data: {
     goodsId: '',
-    goodsInfo: {}
+    goodsInfo: {},
+    isCollect: false
   },
   GoodsInfo: {},
   onLoad: function (options) {
@@ -12,6 +13,13 @@ Page({
       goodsId: goods_id
     })
     this._getGoodsDetailData()
+  },
+  onShow () {
+    const collect = wx.getStorageSync('collect') || []
+    let isCollect = collect.some(v => v.goods_id === this.data.goodsId)
+    this.setData({
+      isCollect
+    })
   },
   // -------------- 网络请求处理函数 ---------
   _getGoodsDetailData () {
@@ -59,5 +67,34 @@ Page({
       icon: 'none',
       mask: true
     })
+  },
+  handleCollection () {
+    const goodsInfo = this.data.goodsInfo
+    const goodsId = this.data.goodsId
+    const collectList = wx.getStorageSync('collcet') || []
+    let title = ''
+    let isCollect = false
+    if (goodsInfo.collect) {
+      title = '取消收藏'
+      isCollect = false
+      goodsInfo.collect = false
+      let index = collectList.findIndex(v => v.goods_id === goodsId)
+      collectList.splice(index, 1)
+    } else {
+      title = '收藏成功'
+      isCollect = true
+      goodsInfo.collect = true
+      goodsInfo.goods_id = goodsId
+      collectList.push(goodsInfo)
+    }
+    wx.setStorageSync('collect', collectList)
+    this.setData({
+      isCollect
+    })
+    wx.showToast({
+      title,
+      mask: true
+    })
+
   }
 })

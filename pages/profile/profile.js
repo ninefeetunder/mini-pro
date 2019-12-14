@@ -1,11 +1,14 @@
 Page({
   data: {
-    userInfo: {}
+    userInfo: {},
+    collectList: []
   },
   onShow () {
     const userInfo = wx.getStorageSync('userInfo')
+    const collectList = wx.getStorageSync('collect')
     this.setData({
-      userInfo
+      userInfo,
+      collectList
     })
   },
   // ---------- 事件处理函数 ---------

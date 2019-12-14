@@ -39,7 +39,9 @@
   justify-content: center;
   align-items: center;
 }
-
+.icon-buoumaotubiao44 {
+  color: var(--themeColor);
+}
 .goods-desc {
   margin-bottom: 90rpx;
 }

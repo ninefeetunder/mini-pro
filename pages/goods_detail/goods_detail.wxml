@@ -20,9 +20,9 @@
   <view class="goods-name">
     {{goodsInfo.goods_name}}
   </view>
-  <view class="goods-collect">
-    <text class="iconfont icon-collection"></text>
-    <text class="goods-text">收藏</text>
+  <view class="goods-collect" bind:tap="handleCollection">
+    <text class="iconfont {{isCollect ? 'icon-buoumaotubiao44' : 'icon-collection'}}"></text>
+    <text class="goods-text">{{isCollect ? '取消收藏' : '收藏'}}</text>
   </view>
 </view>
 
