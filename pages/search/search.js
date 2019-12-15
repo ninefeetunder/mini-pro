@@ -1,66 +1,50 @@
-// pages/search/search.js
+import { getSearchList } from '../../request/search.js'
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    searchList: [],
+    inputVal: '',
+    isFocus: false
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  timer: 0,
+  // ------ 事件处理函数 --------
+  handleSearchInput (e) {
+    let timer = this.timer
+    // 函数防抖
+    clearTimeout(timer)
+    let { value } = e.detail
+    if(!value.trim()) {
+      this.setData({
+        searchList: [],
+        isFocus: false
+      })
+      return
+    } else {
+      this.timer = setTimeout(() => {
+        this._getSearchList(value)
+      }, 1000)
+      this.setData({
+        isFocus: true
+      })
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  handleCancel () {
+    this.setData({
+      searchList: [],
+      inputVal: '',
+      isFocus: false
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  // --------- 网络请求函数 ---------
+  _getSearchList (value) {
+    getSearchList(value).then(res => {
+      const {message} = res.data
+      this.setData({
+        searchList: message
+      })
+    })
+    .catch(err => {
+      console.log('商品搜索失败', err)
+    })
   }
 })

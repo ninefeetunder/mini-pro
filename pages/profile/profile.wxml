@@ -21,7 +21,7 @@
         <view class="his-num">0</view>
         <view class="his-text">收藏店铺</view>
       </navigator>
-      <navigator>
+      <navigator url="/pages/collect/collect">
         <view class="his-num">{{collectList.length}}</view>
         <view class="his-text">收藏商品</view>
       </navigator>
@@ -65,7 +65,7 @@
         <view>联系客服</view>
         <view>400-618-4000</view>
       </view>
-      <view class="s-item">意见反馈</view>
+      <navigator url="/pages/feedback/feedback" class="s-item">意见反馈</navigator>
       <view class="s-item">关于我们</view>
     </view>
     <view class="recommend">把应用推荐给其他人</view>

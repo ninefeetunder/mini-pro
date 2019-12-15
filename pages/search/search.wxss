@@ -1,1 +1,38 @@
 /* pages/search/search.wxss */
+page {
+  background: #dedede;
+  padding: 20rpx;
+}
+
+.search-bar {
+  display: flex;
+  height: 60rpx;
+  margin-bottom: 40rpx;
+}
+input {
+  flex: 1;
+  padding-left: 40rpx;
+  height: 100%;
+  background: #fff;
+  border-radius: 4rpx;
+}
+button {
+  width: 100rpx;
+  height: 100%;
+  font-size: 26rpx;
+  font-weight: 400;
+  margin-left: 30rpx;
+}
+
+.search-content-wrap {
+  background: #fff;
+}
+
+.search-item {
+  border-bottom: 1rpx solid #ccc;
+  font-size: 26rpx;
+  padding: 15rpx 10rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

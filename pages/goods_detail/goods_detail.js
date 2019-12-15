@@ -16,7 +16,7 @@ Page({
   },
   onShow () {
     const collect = wx.getStorageSync('collect') || []
-    let isCollect = collect.some(v => v.goods_id === this.data.goodsId)
+    let isCollect = collect.some(v => v.goods_id == this.data.goodsId)
     this.setData({
       isCollect
     })
@@ -69,22 +69,18 @@ Page({
     })
   },
   handleCollection () {
-    const goodsInfo = this.data.goodsInfo
-    const goodsId = this.data.goodsId
-    const collectList = wx.getStorageSync('collcet') || []
+    let {isCollect, goodsId} = this.data
+    const goodsInfo = this.GoodsInfo
+    const collectList = wx.getStorageSync('collect') || []
     let title = ''
-    let isCollect = false
-    if (goodsInfo.collect) {
+    if (isCollect) {
       title = '取消收藏'
       isCollect = false
-      goodsInfo.collect = false
       let index = collectList.findIndex(v => v.goods_id === goodsId)
       collectList.splice(index, 1)
     } else {
       title = '收藏成功'
       isCollect = true
-      goodsInfo.collect = true
-      goodsInfo.goods_id = goodsId
       collectList.push(goodsInfo)
     }
     wx.setStorageSync('collect', collectList)

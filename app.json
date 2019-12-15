@@ -10,7 +10,9 @@
     "pages/pay/pay",
     "pages/auth/auth",
     "pages/login/login",
-    "pages/order/order"
+    "pages/order/order",
+    "pages/collect/collect",
+    "pages/feedback/feedback"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ff5777",

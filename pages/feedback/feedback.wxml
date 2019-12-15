@@ -1,0 +1,21 @@
+<Tabs tabs="{{tabs}}" bind:changeTabItemActive="handleTabItemChange"/>
+<view class="fd-main">
+  <view class="fd-tips">
+    <text>功能建议</text>
+    <text>遇到的问题</text>
+    <text>购买遇到的问题</text>
+    <text>其他</text>
+  </view>
+  <view class="fd-content">
+    <textarea placeholder="在这里输入问题"></textarea>
+    <view class="fd-tool">
+      <button size="mini">+</button>
+      <view class="up-img-item">
+        <Upimg />
+      </view>
+    </view>
+  </view>
+  <view class="fd-form-wrap">
+    <button size="mini" type="warn">提交</button>
+  </view>
+</view>

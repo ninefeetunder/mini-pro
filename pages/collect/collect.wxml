@@ -1,0 +1,21 @@
+<Tabs tabs="{{tabs}}" bind:changeTabItemActive="handleTabItemChange" />
+
+<view class="collect-main">
+  <view class="collect-goods-wrap">
+    <navigator
+      class="goods-item"
+      wx:for="{{collect}}"
+      wx:key="item.goods_id"
+      url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}">
+      <!-- 左侧图片区域 -->
+      <view class="goods-img-wrap">
+        <image mode="widthFix" src="{{item.goods_small_logo ? item.goods_small_logo : 'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg' }}" />
+      </view>
+      <!-- 右侧商品信息区域 -->
+      <view class="goods-info-wrap">
+        <view class="goods-name">{{item.goods_name}}</view>
+        <view class="goods-price">￥ {{item.goods_price}}</view>
+      </view>
+    </navigator>
+  </view>
+</view>
