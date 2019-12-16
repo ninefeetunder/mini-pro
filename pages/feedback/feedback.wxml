@@ -9,9 +9,9 @@
   <view class="fd-content">
     <textarea placeholder="在这里输入问题"></textarea>
     <view class="fd-tool">
-      <button size="mini">+</button>
-      <view class="up-img-item">
-        <Upimg />
+      <button size="mini" bind:tap="handleUploadImg">+</button>
+      <view class="up-img-item" wx:for="{{imgList}}" wx:key="*this">
+        <Upimg src="{{item}}" index="{{index}}" bind:deleteImg='handleDeleteImg' />
       </view>
     </view>
   </view>
